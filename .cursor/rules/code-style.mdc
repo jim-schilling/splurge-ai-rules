@@ -1,0 +1,10 @@
+---
+description: code formatting and style
+alwaysApply: false
+---
+- Prefer line length max of 120 characters, except when to do so would require use of temporary variables
+- Except clauses shall be prefixed with a blank line
+- Prefer separating logical blocks of code with a blank line for visual clarity
+- For Python, for any line continuations, use parentheses only
+- For Python, use ruff for code style, linting, and formatting
+- Avoid magic strings and magic numbers, instead prefer class level constants, otherwise use module/function level constants. 

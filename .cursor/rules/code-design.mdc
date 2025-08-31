@@ -1,0 +1,14 @@
+---
+description: code structure and design
+alwaysApply: false
+---
+- Prioritize error handling, and make use of try blocks.
+- Use guard clauses to handle preconditions and invalid state early.
+- Avoid side effects in module-level code.
+- Place the happy path last in the function.
+- Prefer if blocks over if else blocks.
+- Prefer iteration and modularization over code duplication.
+- Prefer simple, straightforward design approach instead of over-engineered design.
+- Class level private methods shall prefer parameterization versus reliance on instance or class objects.
+- Prefer custom exceptions.
+- Code for clarity, efficiency, and best practices.

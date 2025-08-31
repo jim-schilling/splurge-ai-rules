@@ -1,0 +1,10 @@
+---
+description: method signatures and parameter standards
+alwaysApply: false
+---
+- Prefer parameters in method signatures and method calls to be listed on separate lines.
+- Prefer named keywords for default parameters.
+- Method signatures shall prefer use of keywords for more than 1 parameter.
+- For all method signatures with more than 2 parameters, place each parameter on separate line and close parameter block (e.g. close parenthesis, close bracket) on separate line.
+- For all method calls that span more than 1 line or with more than 2 parameters, place each parameter on separate line and close parameter block on separate line.
+- When updating a method or class signature, do not maintain backwards compatibility unless specifically told to do so.

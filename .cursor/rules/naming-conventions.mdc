@@ -1,0 +1,8 @@
+---
+description: naming conventions
+alwaysApply: false
+---
+- Use descriptive variable names with auxiliary verbs (e.g. is_active, has_permission)
+- For object definitions and declarations (e.g. class, enum, dataclass), names with acronyms or abbreviations shall be Pascal case like DsvReader, CsvWriter, TransformXmlToJson
+- For SQL, prefer lower case column names.
+- Prefer upper snake case for constant names.

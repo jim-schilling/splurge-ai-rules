@@ -1,0 +1,8 @@
+---
+description: comments and documentation standards
+alwaysApply: false
+---
+- For complex logic, preface block with comment.
+- Avoid inline comments, except to clarify complex intent.
+- Avoid noisy comments for refactors or redesign, except to explain complex logic or clarify intent.
+- For Python, prefer Google-style docstrings.

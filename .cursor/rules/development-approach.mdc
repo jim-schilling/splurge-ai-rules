@@ -1,0 +1,10 @@
+---
+description: development methodology and process
+alwaysApply: false
+---
+- Follow SOLID, DRY, TDD, and MVP principles.
+- Follow Research, Plan, and Implement lifecycle.
+- Document research in docs/research-[yyyyMMddTHHmm].md.
+- Document action plans in docs/plan-[yyyyMMddTHHmm].md.
+- Plans shall detail requirements, testing strategy (i.e. TDD and BDD), and step-by-step implementation guide.
+- Implementation lifecycle shall always: code failing tests, then implement code, then run tests, then iteratively refactor and run tests until all tests pass.

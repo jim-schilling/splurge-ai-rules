@@ -1,0 +1,11 @@
+---
+description: modern python standards
+alwaysApply: false
+---
+- Type annotate method signatures always.
+- Type annotate variables where clarity is needed.
+- Prefer | instead of Optional or Union.
+- Code concise, technical, Python that adheres to PEP 8 and PEP 585.
+- Code to modern Python standards targeting version 3.10 or later.
+- Use absolute import paths.
+- When possible, place imports at top of module.
