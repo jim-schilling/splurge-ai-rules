@@ -7,7 +7,7 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 
 ## Rule Categories
 
-### 🏗️ Code Design
+### 🏗️ Design Standards
 - Prioritize error handling with try blocks and guard clauses
 - Avoid side effects in module-level code
 - Place happy path logic last in functions
@@ -15,14 +15,14 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Emphasize iteration, modularization, and custom exceptions
 - Follow simple, straightforward design principles
 
-### 🎨 Code Style
+### 🎨 Style Standards
 - Maximum line length of 120 characters (with exceptions)
 - Use blank lines to separate logical code blocks
 - Parentheses-only line continuations in Python
 - Ruff for Python code style, linting, and formatting
 - Replace magic strings/numbers with class-level constants
 
-### 🔄 Development Approach
+### 🔄 SDLC Standards
 - Follow SOLID, DRY, TDD, and MVP principles
 - Research → Plan → Implement development lifecycle
 - Document research in `docs/research-[yyyyMMddTHHmm].md`
@@ -43,7 +43,7 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Multi-line formatting for methods with >2 parameters
 - No backwards compatibility maintenance unless specified
 
-### 🏷️ Naming Conventions
+### 🏷️ Naming Standards
 - Descriptive variable names with auxiliary verbs (e.g., `is_active`, `has_permission`)
 - PascalCase for acronyms/abbreviations in object definitions
 - Lowercase column names for SQL
@@ -57,6 +57,7 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Target Python 3.10+ features
 - Absolute import paths preferred
 - Imports at module top when possible
+- Sort imports grouped by standard libraries → third-party libraries → local libraries (alphabetically within each group)
 
 ### 🧪 Testing Standards
 - Validate public API behavior only
@@ -84,3 +85,16 @@ These rules are designed to be used with Cursor AI to maintain consistent code q
 ## Installation
 
 Clone this repository and configure Cursor AI to use the rules in the `.cursor/rules/` directory.
+
+## Recent Changes
+
+### v2025.09.02 Update
+- **Rule File Renaming**: Standardized rule file naming convention for consistency
+  - `code-design.mdc` → `design-standards.mdc`
+  - `code-style.mdc` → `style-standards.mdc`
+  - `development-approach.mdc` → `sdlc-standards.mdc`
+  - `naming-conventions.mdc` → `naming-standards.mdc`
+- **Python Standards Enhancement**: Added import sorting guidelines
+  - Sort imports grouped by: standard libraries → third-party libraries → local libraries
+  - Within each group, sort alphabetically
+- **README Updates**: Updated section headers to match new naming convention
