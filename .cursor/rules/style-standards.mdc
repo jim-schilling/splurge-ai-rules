@@ -1,5 +1,5 @@
 ---
-description: code formatting and style
+description: code formatting and style standards
 alwaysApply: false
 ---
 - Prefer line length max of 120 characters, except when to do so would require use of temporary variables

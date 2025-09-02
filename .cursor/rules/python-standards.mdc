@@ -9,3 +9,4 @@ alwaysApply: false
 - Code to modern Python standards targeting version 3.10 or later.
 - Use absolute import paths.
 - When possible, place imports at top of module.
+- Sort imports grouped by - standard libraries -> third-party libraries -> local libraries. Within each group, sort alphabetically.

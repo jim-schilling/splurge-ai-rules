@@ -1,5 +1,5 @@
 ---
-description: code structure and design
+description: code structure and design standards
 alwaysApply: false
 ---
 - Prioritize error handling, and make use of try blocks.
