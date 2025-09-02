@@ -1,5 +1,5 @@
 ---
-description: development methodology and process
+description: development methodology and process standards
 alwaysApply: false
 ---
 - Follow SOLID, DRY, TDD, and MVP principles.
