@@ -1,10 +1,9 @@
 # splurge-cursor-rules
-
 A comprehensive collection of Cursor AI rules for consistent, high-quality code development across multiple domains.
 
 ## Overview
 
-This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 8 main categories covering various aspects of code quality, design, and development processes.
+This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 9 main categories covering various aspects of code quality, design, and development processes.
 
 ## Rule Categories
 
@@ -67,6 +66,16 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Validate text patterns, not exact content/formatting
 - pytest ecosystem: pytest, pytest-cov, pytest-xdist
 - Default pytest parameters: `-x -v -n auto`
+
+### 📁 Project Standards
+- Create top-level folder: `docs/`
+- For code projects: create `tests/` and `examples/` folders
+- Under `tests/`: create `unit/` and `integration/` sub-folders
+- For Python projects: use modern `pyproject.toml` configuration
+- For Python projects: implement CalVer versioning
+- Standard license: MIT
+- Standard author/maintainer: Jim Schilling
+- Standard base URL: `http://github.com/jim-schilling/[REPOSITORY]`
 
 ## Usage
 
