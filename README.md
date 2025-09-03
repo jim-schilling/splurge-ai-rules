@@ -1,4 +1,4 @@
-# splurge-cursor-rules
+# splurge-cursor-rules 
 A comprehensive collection of Cursor AI rules for consistent, high-quality code development across multiple domains.
 
 ## Overview
@@ -8,11 +8,15 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 ## Rule Categories
 
 ### 🏗️ Design Standards
+- Follow SOLID, DRY, BDD (TDD), MVP, KISS, PoLA, and YAGNI design principles
+- Prefer composition over inheritance and encapsulation
+- Emphasize separation of concerns and fail fast approach
+- Follow law of demeter and guard clauses for preconditions
 - Prioritize error handling with try blocks and guard clauses
-- Avoid side effects in module-level code
-- Place happy path logic last in functions
-- Prefer if blocks over if-else chains
-- Emphasize iteration, modularization, and custom exceptions
+- Use domain-specific custom exceptions for public APIs
+- Prefer native/built-in exceptions for low-level APIs
+- Avoid side effects in module-level code and place happy path logic last
+- Prefer if blocks over if-else chains and iteration over code duplication
 - Follow simple, straightforward design principles
 
 ### 🎨 Style Standards
@@ -23,12 +27,11 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Replace magic strings/numbers with class-level constants
 
 ### 🔄 SDLC Standards
-- Follow SOLID, DRY, TDD, and MVP principles
 - Research → Plan → Implement development lifecycle
-- Document research in `docs/research-[yyyyMMddTHHmm].md`
-- Document action plans in `docs/plan-[yyyyMMddTHHmm].md`
+- Document research in `docs/research-[yyyy-MM-ddTHHmm].md`
+- Document action plans in `docs/plan-[yyyy-MM-ddTHHmm].md`
 - TDD implementation: failing tests → code → refactor cycle
-- Plans include requirements, testing strategy (TDD/BDD), and step-by-step guides
+- Plans include requirements, testing strategy (e.g. TDD and BDD), and step-by-step guides
 
 ### 📚 Documentation Standards
 - Comments for complex logic blocks only
@@ -87,6 +90,18 @@ These rules are designed to be used with Cursor AI to maintain consistent code q
 Clone this repository and configure Cursor AI to use the rules in the `.cursor/rules/` directory.
 
 ## Recent Changes
+
+### v2025.09.03 Update
+- **Design Standards Enhancement**: Significantly expanded design principles and guidelines
+  - Added SOLID, DRY, BDD (TDD), MVP, KISS, PoLA, and YAGNI principles
+  - Added preferences for composition over inheritance, encapsulation, and separation of concerns
+  - Enhanced with fail fast approach and law of demeter
+  - Refined exception handling: domain-specific custom exceptions for public APIs
+  - Native/built-in exceptions preferred for low-level APIs
+- **SDLC Standards Refinement**: Improved documentation and formatting
+  - Moved design principles to Design Standards for better organization
+  - Updated date format from `[yyyyMMddTHHmm]` to `[yyyy-MM-ddTHHmm]` for better readability
+  - Changed "i.e." to "e.g." for improved grammar
 
 ### v2025.09.02 Update
 - **Rule File Renaming**: Standardized rule file naming convention for consistency
