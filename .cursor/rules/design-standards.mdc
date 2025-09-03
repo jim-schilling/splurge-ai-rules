@@ -2,6 +2,12 @@
 description: code structure and design standards
 alwaysApply: false
 ---
+- Follow SOLID, DRY, BDD (TDD), MVP, KISS, PoLA, and YAGNI design principles.
+- Prefer composition over inheritance.
+- Prefer encapsulation.
+- Prefer separation of concerns.
+- Prefer fail fast.
+- Prefer law of demeter.
 - Prioritize error handling, and make use of try blocks.
 - Use guard clauses to handle preconditions and invalid state early.
 - Avoid side effects in module-level code.
@@ -10,5 +16,6 @@ alwaysApply: false
 - Prefer iteration and modularization over code duplication.
 - Prefer simple, straightforward design approach instead of over-engineered design.
 - Class level private methods shall prefer parameterization versus reliance on instance or class objects.
-- Prefer custom exceptions.
+- Prefer domain specific custom exceptions for public APIs.
+- Prefer native/built-in exceptions for low-level APIs, where appropriate.
 - Code for clarity, efficiency, and best practices.
