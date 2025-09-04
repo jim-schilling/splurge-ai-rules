@@ -10,3 +10,4 @@ alwaysApply: false
 - Use absolute import paths.
 - When possible, place imports at top of module.
 - Sort imports grouped by - standard libraries -> third-party libraries -> local libraries. Within each group, sort alphabetically.
+- Use nested context managers only and avoid combining multiple context managers into single statement.
