@@ -8,5 +8,5 @@ alwaysApply: true
 - Implementation lifecycle shall always: code failing tests, then implement code, then run tests, then iteratively refactor and run tests until all tests pass.
 - Every feature MUST begin its existence as a standalone library. 
 - No feature shall be implemented directly within application code without first being abstracted into a reusable library component.
-- Every software library must expose its functionality through a CLI.
+- Software tools and primary libraries must expose their functionality through a CLI. Other libraries may omit a CLI if appropriate.
 - If in doubt, prompt user for clarification and mark as [NEEDS CLARIFICATION].
