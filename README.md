@@ -3,7 +3,7 @@ A comprehensive collection of Cursor AI rules for consistent, high-quality code 
 
 ## Overview
 
-This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 9 main categories covering various aspects of code quality, design, and development processes.
+This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 11 main categories covering various aspects of code quality, design, security, and development processes.
 
 ## Rule Categories
 
@@ -20,18 +20,22 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Follow simple, straightforward design principles
 
 ### 🎨 Style Standards
-- Maximum line length of 120 characters (with exceptions)
-- Use blank lines to separate logical code blocks
-- Parentheses-only line continuations in Python
-- Ruff for Python code style, linting, and formatting
-- Replace magic strings/numbers with class-level constants
+- Prefer line length max of 120 characters, except when to do so would require temporary variables
+- Except clauses shall be prefixed with a blank line
+- Prefer separating logical blocks of code with a blank line for visual clarity
+- For Python, use parentheses only for line continuations
+- For Python, use ruff for code style, linting, and formatting
+- Avoid magic strings and magic numbers, prefer class-level constants, otherwise use module/function level constants
 
 ### 🔄 SDLC Standards
 - Research → Plan → Implement development lifecycle
-- Document research in `docs/research-[yyyy-MM-ddTHHmm].md`
-- Document action plans in `docs/plan-[yyyy-MM-ddTHHmm].md`
+- Document research in `docs/research-[yyyy-MM-ddTHHmm]-[sequence].md`
+- Document action plans in `docs/plan-[yyyy-MM-dd]-[sequence].md`
 - TDD implementation: failing tests → code → refactor cycle
 - Plans include requirements, testing strategy (e.g. TDD and BDD), and step-by-step guides
+- Every feature MUST begin as a standalone library before application integration
+- Every software library must expose functionality through a CLI
+- If in doubt, prompt user for clarification and mark as [NEEDS CLARIFICATION]
 
 ### 📚 Documentation Standards
 - Comments for complex logic blocks only
@@ -73,13 +77,36 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 
 ### 📁 Project Standards
 - Create top-level folder: `docs/`
-- For code projects: create `tests/` and `examples/` folders
-- Under `tests/`: create `unit/` and `integration/` sub-folders
+- Create `docs/README-details.md` which details project features, usage, etc.
+- For code projects: create top-level folders: `tests/`, `examples/`, `specs/`
+- Under `tests/`: create `unit/`, `integration/`, `e2e/` sub-folders
 - For Python projects: use modern `pyproject.toml` configuration
 - For Python projects: implement CalVer versioning
+- Create project `README.md` which summarizes project
+- Create project `CHANGELOG.md` which details changes for each version/feature-branch
 - Standard license: MIT
 - Standard author/maintainer: Jim Schilling
 - Standard base URL: `http://github.com/jim-schilling/[REPOSITORY]`
+
+### 🖥️ CLI Standards
+- Command-line interfaces MUST accept text as input (via stdin, arguments, or files)
+- Command-line interfaces MUST produce text as output (via stdout)
+- Command-line interfaces MUST support JSON format for structured data exchange
+
+### 🔒 Security Standards
+- Follow secure coding best practices and OWASP guidelines
+- Validate and sanitize all user inputs to prevent injection attacks (SQL, Shell, XSS, command injection)
+- Use parameterized queries and prepared statements for database operations
+- Implement proper authentication and authorization mechanisms
+- Never store sensitive data (passwords, API keys, tokens) in plain text
+- Follow the principle of least privilege for user permissions and API access
+- Implement comprehensive error handling without exposing sensitive information
+- Restrict allowed file types and sizes for uploads
+- Use secure random number generators for cryptographic operations
+- Implement proper logging without logging sensitive information
+- Use environment variables or secure vaults for configuration secrets
+- Implement proper password policies and secure password hashing
+- Follow secure API design principles (proper HTTP methods, versioning, etc.)
 
 ## Usage
 
@@ -90,6 +117,17 @@ These rules are designed to be used with Cursor AI to maintain consistent code q
 Clone this repository and configure Cursor AI to use the rules in the `.cursor/rules/` directory.
 
 ## Recent Changes
+
+### v2025.09.04 Update
+- **New Rule Categories**: Added two new rule categories to expand coverage
+  - CLI Standards: Command-line interface best practices for text input/output and JSON support
+  - Security Standards: Comprehensive secure coding guidelines covering OWASP principles, input validation, authentication, encryption, and secure API design
+- **Rule Count Update**: Expanded from 9 to 11 rule categories total
+- **Standards Refinement**: Enhanced documentation and clarified guidelines across multiple rule files
+- **README Enhancement**: Updated overview and added comprehensive documentation for new rule categories
+- **Documentation Accuracy**: Corrected project standards to include missing folders (specs/, e2e/) and files (README-details.md, CHANGELOG.md)
+- **Standards Alignment**: Updated SDLC date format and added missing library development requirements
+- **Style Standards Enhancement**: Expanded magic constants guidance to include module/function level fallbacks
 
 ### v2025.09.03 Update
 - **Design Standards Enhancement**: Significantly expanded design principles and guidelines

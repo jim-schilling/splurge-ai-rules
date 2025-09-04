@@ -1,0 +1,7 @@
+---
+description: command-line interface standards
+alwaysApply: false
+---
+- MUST accept text as input (via stdin, arguments, or files).
+- MUST produce text as output (via stdout).
+- MUST support JSON format for structured data exchange.

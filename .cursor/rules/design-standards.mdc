@@ -6,7 +6,7 @@ alwaysApply: false
 - Prefer composition over inheritance.
 - Prefer encapsulation.
 - Prefer separation of concerns.
-- Prefer fail fast.
+- Prefer to fail fast.
 - Prefer law of demeter.
 - Prioritize error handling, and make use of try blocks.
 - Use guard clauses to handle preconditions and invalid state early.
@@ -18,4 +18,4 @@ alwaysApply: false
 - Class level private methods shall prefer parameterization versus reliance on instance or class objects.
 - Prefer domain specific custom exceptions for public APIs.
 - Prefer native/built-in exceptions for low-level APIs, where appropriate.
-- Code for clarity, efficiency, and best practices.
+- Code for clarity and efficiency.
