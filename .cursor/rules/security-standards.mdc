@@ -1,0 +1,18 @@
+---
+description: secure coding standards and best practices
+alwaysApply: false
+---
+- Follow secure coding best practices.
+- Validate and sanitize all user inputs to prevent injection attacks (SQL, Shell, XSS, command injection).
+- Use parameterized queries and prepared statements for database operations.
+- Implement proper authentication and authorization mechanisms.
+- Never store sensitive data (passwords, API keys, tokens) in plain text.
+- Follow the principle of least privilege for user permissions and API access.
+- Implement comprehensive error handling without exposing sensitive information.
+- Restrict allowed file types and sizes.
+- Use secure random number generators for cryptographic operations.
+- Implement proper logging without logging sensitive information.
+- Follow OWASP security guidelines and address common vulnerabilities.
+- Use environment variables or secure vaults for configuration secrets.
+- Implement proper password policies and secure password hashing.
+- Follow secure API design principles (proper HTTP methods, versioning, etc.).

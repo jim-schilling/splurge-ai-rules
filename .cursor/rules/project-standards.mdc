@@ -3,10 +3,13 @@ description: project organization and standards
 alwaysApply: false
 ---
 - Create top-level folder: docs/.
-- For code projects, create top-level folders: tests/ , examples/.
-- For code projects, create sub-folders under tests/: unit/ , integration/.
+- Create docs/README-details.md which details project features, usage, etc.
+- For code projects, create top-level folders: tests/ , examples/ , specs/.
+- For code projects, create sub-folders under tests/: unit/ , integration/ , e2e/.
 - For Python projects, create modern, standardized pyproject.toml.
 - For Python projects, use CalVer versioning.
+- Create project README.md which summarizes project.
+- Create project CHANGELOG.md which details changes for each version / feature-branch.
 - License shall be MIT.
 - Author and Maintainer shall be Jim Schilling.
 - Project base url shall be http://github.com/jim-schilling/[REPOSITORY].
