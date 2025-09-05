@@ -3,21 +3,22 @@ A comprehensive collection of Cursor AI rules for consistent, high-quality code 
 
 ## Overview
 
-This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 11 main categories covering various aspects of code quality, design, security, and development processes.
+This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 11 main categories covering various aspects of code quality, design, security, and development processes. All rules have been recently reviewed and updated for maximum clarity and actionable guidance.
 
 ## Rule Categories
 
 ### 🏗️ Design Standards
-- Follow SOLID, DRY, BDD (TDD), MVP, KISS, PoLA, and YAGNI design principles
-- Prefer composition over inheritance and encapsulation
-- Emphasize separation of concerns and fail fast approach
-- Follow law of demeter and guard clauses for preconditions
-- Prioritize error handling with try blocks and guard clauses
-- Use domain-specific custom exceptions for public APIs
-- Prefer native/built-in exceptions for low-level APIs
-- Avoid side effects in module-level code and place happy path logic last
-- Prefer if blocks over if-else chains and iteration over code duplication
-- Follow simple, straightforward design principles
+- Follow SOLID (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) principles
+- Follow DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), YAGNI (You Aren't Gonna Need It) principles
+- Practice BDD/TDD (Behavior/Test Driven Development) and MVP (Minimum Viable Product) approaches
+- Follow PoLA (Principle of Least Authority) for secure design
+- Prefer composition over inheritance and strong encapsulation
+- Emphasize separation of concerns and fail-fast error handling
+- Follow Law of Demeter - objects should only interact with immediate dependencies
+- Use guard clauses for preconditions and early returns instead of complex if-else chains
+- Place happy path (main successful execution flow) last in functions
+- Use domain-specific custom exceptions for public APIs, native exceptions for low-level APIs
+- Avoid side effects in module-level code and prefer simple, straightforward designs
 
 ### 🎨 Style Standards
 - Prefer line length max of 120 characters, except when to do so would require temporary variables
@@ -28,43 +29,50 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Avoid magic strings and magic numbers, prefer class-level constants, otherwise use module/function level constants
 
 ### 🔄 SDLC Standards
-- Research → Plan → Implement development lifecycle
-- Document research in `docs/research-[yyyy-MM-ddTHHmm]-[sequence].md`
+- Follow Research, Plan, and Implement development lifecycle
+- Document research in `docs/research-[yyyy-MM-dd]-[sequence].md`
 - Document action plans in `docs/plan-[yyyy-MM-dd]-[sequence].md`
-- TDD implementation: failing tests → code → refactor cycle
-- Plans include requirements, testing strategy (e.g. TDD and BDD), and step-by-step guides
-- Every feature MUST begin as a standalone library before application integration
-- Every software library must expose functionality through a CLI
+- Document requirements and specifications in `specs/spec-[yyyy-MM-dd]-[sequence].md`
+- TDD implementation: write failing tests → implement code → run tests → refactor iteratively
+- Plans include requirements, acceptance criteria, testing strategy (TDD/BDD), and step-by-step guides
+- Every feature must start as a standalone library before integration:
+  - Develop features as independent, reusable library components first
+  - Only integrate into larger applications after proving standalone functionality
+- Software tools, primary libraries, and development tools must expose functionality through a CLI
 - If in doubt, prompt user for clarification and mark as [NEEDS CLARIFICATION]
 
 ### 📚 Documentation Standards
-- Comments for complex logic blocks only
-- Avoid inline comments except for complex intent clarification
-- Google-style docstrings for Python
-- Minimize noisy comments for refactors/redesigns
+- Add comments before complex logic blocks to explain the "why" and "what"
+- Use inline comments sparingly, only for complex or non-obvious code sections
+- Remove outdated comments during refactoring instead of accumulating them
+- Use Google-style docstrings for all public functions, classes, and modules in Python
 
 ### 🔧 Method Standards
-- Parameters on separate lines for readability
-- Named keyword arguments for defaults
-- Keywords required for methods with multiple parameters
-- Multi-line formatting for methods with >2 parameters
-- No backwards compatibility maintenance unless specified
+- Prefer parameters in method signatures and calls to be listed on separate lines
+- Prefer named keyword arguments for default parameters
+- Require keywords for methods with more than 1 parameter
+- Format method signatures with >2 parameters with each parameter on a separate line
+- Format method calls with >2 parameters with each parameter on a separate line
+- Include practical code examples for multi-parameter formatting
+- Do not maintain backwards compatibility unless specifically requested
 
 ### 🏷️ Naming Standards
-- Descriptive variable names with auxiliary verbs (e.g., `is_active`, `has_permission`)
-- PascalCase for acronyms/abbreviations in object definitions
-- Lowercase column names for SQL
-- UPPER_SNAKE_CASE for constants
+- Use descriptive variable names with auxiliary verbs (e.g., `is_active`, `has_permission`)
+- Use PascalCase for class, enum, and dataclass names (e.g., `DsvReader`, `CsvWriter`, `TransformXmlToJson`)
+- Prefer lowercase column names for SQL
+- Use UPPER_SNAKE_CASE for constant names
+- Environment variables must use project prefix `[A-Z][A-Z0-9_]*_` (e.g., `SPLURGE_DSV_`)
 
 ### 🐍 Python Standards
-- Always type-annotate method signatures
-- Type annotations where clarity is needed
-- Use `|` instead of `Optional` or `Union`
-- Adhere to PEP 8 and PEP 585 standards
-- Target Python 3.10+ features
-- Absolute import paths preferred
-- Imports at module top when possible
-- Sort imports grouped by standard libraries → third-party libraries → local libraries (alphabetically within each group)
+- Always add type annotations to function and method signatures
+- Add type annotations to variables when it improves code clarity
+- Prefer `|` instead of `Optional` or `Union` (Python 3.10+ union syntax)
+- Write concise, technical Python that adheres to PEP 8 and PEP 585
+- Target modern Python standards (version 3.10 or later)
+- Use absolute import paths
+- Place imports at module top when possible
+- Group and sort imports: standard libraries, then third-party libraries, then local libraries (alphabetically within each group)
+- Use separate statements for multiple context managers instead of nesting them
 
 ### 🧪 Testing Standards
 - Validate public API behavior only
@@ -89,9 +97,16 @@ This repository contains a set of Cursor AI rules that enforce best practices fo
 - Standard base URL: `http://github.com/jim-schilling/[REPOSITORY]`
 
 ### 🖥️ CLI Standards
-- Command-line interfaces MUST accept text as input (via stdin, arguments, or files)
-- Command-line interfaces MUST produce text as output (via stdout)
-- Command-line interfaces MUST support JSON format for structured data exchange
+- Accept text input via stdin, arguments, or files
+- Support environment variables for configuration (use project prefix for sensitive data)
+- Provide `--output-format {table,json,ndjson}` options (default: table)
+- JSON output formats: complete arrays for `json`, one object per line for `ndjson`
+- Use UTF-8 encoding without BOM for stdout/stderr
+- Standard exit codes: 0 (success), 1 (error), 2 (invalid arguments), 130 (interrupted)
+- Environment variable flags map with prefix + uppercasing + hyphens→underscores
+- Fail fast for missing required environment variables with clear error messages
+- Redact sensitive data in output, logging, and error messages
+- Document defaults in --help output
 
 ### 🔒 Security Standards
 - Follow secure coding best practices and OWASP guidelines
@@ -117,6 +132,21 @@ These rules are designed to be used with Cursor AI to maintain consistent code q
 Clone this repository and configure Cursor AI to use the rules in the `.cursor/rules/` directory.
 
 ## Recent Changes
+
+### v2025.09.05 Update - Clarity Improvements
+- **Comprehensive Clarity Review**: Conducted thorough review and improvements across all 11 rule files
+- **Header Standardization**: Fixed inconsistent header formats in SDLC and testing standards
+- **Content Consolidation**: Removed duplicate content in project standards
+- **Simplified Language**: Rewrote complex sentences for better readability
+  - Simplified PascalCase naming conventions explanation
+  - Clarified JSON streaming semantics with structured format options
+  - Broke up run-on sentences in CLI configuration guidance
+- **Added Code Examples**: Included practical Python examples for:
+  - Multi-parameter method signatures and calls
+  - Google-style docstrings with Args/Returns/Raises sections
+- **Enhanced Documentation**: Made documentation standards more specific with clear guidelines
+- **Improved Technical Writing**: Enhanced type annotation guidance and import organization
+- **Better Structure**: Organized content with consistent bullet points and clearer hierarchies
 
 ### v2025.09.04 Update
 - **New Rule Categories**: Added two new rule categories to expand coverage

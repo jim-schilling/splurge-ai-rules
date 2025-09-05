@@ -2,12 +2,12 @@
 description: modern python standards
 alwaysApply: false
 ---
-- Type annotate method signatures always.
-- Type annotate variables where clarity is needed.
+- Always add type annotations to function and method signatures.
+- Add type annotations to variables when it improves code clarity.
 - Prefer | instead of Optional or Union.
 - Code concise, technical, Python that adheres to PEP 8 and PEP 585.
 - Code to modern Python standards targeting version 3.10 or later.
 - Use absolute import paths.
 - When possible, place imports at top of module.
-- Sort imports grouped by - standard libraries -> third-party libraries -> local libraries. Within each group, sort alphabetically.
-- Use nested context managers only and avoid combining multiple context managers into single statement.
+- Group and sort imports: standard libraries, then third-party libraries, then local libraries. Sort alphabetically within each group.
+- Use separate statements for multiple context managers instead of nesting them.

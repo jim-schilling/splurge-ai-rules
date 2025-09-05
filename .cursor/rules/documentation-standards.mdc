@@ -2,7 +2,21 @@
 description: comments and documentation standards
 alwaysApply: false
 ---
-- For complex logic, preface block with comment.
-- Avoid inline comments, except to clarify complex intent.
-- Avoid noisy comments for refactors or redesign, except to explain complex logic or clarify intent.
-- For Python, prefer Google-style docstrings.
+- Add comments before complex logic blocks to explain the "why" and "what".
+- Use inline comments sparingly, only for complex or non-obvious code sections.
+- Remove outdated comments during refactoring instead of accumulating them.
+- Use Google-style docstrings for all public functions, classes, and modules in Python:
+  ```python
+  def process_data(input_file: str) -> dict:
+      """Process input file and return structured data.
+
+      Args:
+          input_file: Path to the input file to process
+
+      Returns:
+          Dictionary containing processed data
+
+      Raises:
+          FileNotFoundError: If input file doesn't exist
+      """
+  ```

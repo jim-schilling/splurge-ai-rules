@@ -5,6 +5,20 @@ alwaysApply: false
 - Prefer parameters in method signatures and method calls to be listed on separate lines.
 - Prefer named keywords for default parameters.
 - Method signatures shall prefer use of keywords for more than 1 parameter.
-- For all method signatures with more than 2 parameters, place each parameter on separate line and close parameter block (e.g. close parenthesis, close bracket) on separate line.
-- For all method calls that span more than 1 line or with more than 2 parameters, place each parameter on separate line and close parameter block on separate line.
+- For method signatures with more than 2 parameters, place each parameter on a separate line:
+  ```python
+  def process_data(
+      input_file: str,
+      output_format: str,
+      validate_schema: bool = True
+  ) -> dict:
+  ```
+- For method calls with more than 2 parameters, place each parameter on a separate line:
+  ```python
+  result = process_data(
+      input_file="data.json",
+      output_format="ndjson",
+      validate_schema=True
+  )
+  ```
 - When updating a method or class signature, do not maintain backwards compatibility unless specifically told to do so.

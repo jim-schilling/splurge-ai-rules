@@ -2,20 +2,26 @@
 description: code structure and design standards
 alwaysApply: false
 ---
-- Follow SOLID, DRY, BDD (TDD), MVP, KISS, PoLA, and YAGNI design principles.
+- Follow SOLID (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) principles.
+- Follow DRY (Don't Repeat Yourself) principle.
+- Follow BDD/TDD (Behavior/Test Driven Development) practices.
+- Follow MVP (Minimum Viable Product) approach.
+- Follow KISS (Keep It Simple, Stupid) principle.
+- Follow PoLA (Principle of Least Authority).
+- Follow YAGNI (You Aren't Gonna Need It) principle.
 - Prefer composition over inheritance.
 - Prefer encapsulation.
 - Prefer separation of concerns.
 - Prefer to fail fast.
-- Prefer law of demeter.
-- Prioritize error handling, and make use of try blocks.
+- Follow the Law of Demeter - objects should only interact with their immediate dependencies.
+- Prioritize error handling using appropriate mechanisms (exceptions, return values, Result types, or callbacks).
 - Use guard clauses to handle preconditions and invalid state early.
 - Avoid side effects in module-level code.
-- Place the happy path last in the function.
-- Prefer if blocks over if else blocks.
+- Place the happy path (main successful execution flow) last in the function.
+- Use guard clauses and early returns instead of complex if-else chains.
 - Prefer iteration and modularization over code duplication.
-- Prefer simple, straightforward design approach instead of over-engineered design.
-- Class level private methods shall prefer parameterization versus reliance on instance or class objects.
-- Prefer domain specific custom exceptions for public APIs.
-- Prefer native/built-in exceptions for low-level APIs, where appropriate.
-- Code for clarity and efficiency.
+- Prefer simple, straightforward design over over-engineering.
+- Private methods should accept necessary data as parameters rather than directly accessing instance variables.
+- Use domain-specific custom exceptions for public APIs.
+- Use native/built-in exceptions for low-level APIs, where appropriate.
+- Prioritize code clarity while maintaining reasonable efficiency.

@@ -1,12 +1,16 @@
 ---
+description: software development lifecycle standards
 alwaysApply: true
 ---
 - Follow Research, Plan, and Implement lifecycle.
 - Document research in docs/research-[yyyy-MM-dd]-[sequence].md.
 - Document action plans in docs/plan-[yyyy-MM-dd]-[sequence].md.
+- Document requirements and specifications in specs/spec-[yyyy-MM-dd]-[sequence].md.
 - Plans shall detail requirements, acceptance criteria, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
+- Each action plan shall be sub-divided into stages (e.g. Stage-1, Stage-2), while stages are subdivided into tasks (e.g. Task-[Stage].1, Task-[Stage].2).
 - Implementation lifecycle shall always: code failing tests, then implement code, then run tests, then iteratively refactor and run tests until all tests pass.
-- Every feature MUST begin its existence as a standalone library. 
-- No feature shall be implemented directly within application code without first being abstracted into a reusable library component.
-- Software tools and primary libraries must expose their functionality through a CLI. Other libraries may omit a CLI if appropriate.
+- Every feature must start as a standalone library before integration:
+  - Develop features as independent, reusable library components first
+  - Only integrate into larger applications after proving standalone functionality
+- Software tools, primary libraries, data tools, and development tools must expose their functionality through a CLI. Other software functionality may omit a CLI if appropriate.
 - If in doubt, prompt user for clarification and mark as [NEEDS CLARIFICATION].

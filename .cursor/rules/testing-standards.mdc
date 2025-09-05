@@ -1,6 +1,6 @@
 ---
-alwaysApply: false
 description: testing standards
+alwaysApply: false
 ---
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
