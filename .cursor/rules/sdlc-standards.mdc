@@ -2,9 +2,9 @@
 alwaysApply: true
 ---
 - Follow Research, Plan, and Implement lifecycle.
-- Document research in docs/research-[yyyy-MM-ddTHHmm]-[sequence].md.
+- Document research in docs/research-[yyyy-MM-dd]-[sequence].md.
 - Document action plans in docs/plan-[yyyy-MM-dd]-[sequence].md.
-- Plans shall detail requirements, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
+- Plans shall detail requirements, acceptance criteria, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
 - Implementation lifecycle shall always: code failing tests, then implement code, then run tests, then iteratively refactor and run tests until all tests pass.
 - Every feature MUST begin its existence as a standalone library. 
 - No feature shall be implemented directly within application code without first being abstracted into a reusable library component.
