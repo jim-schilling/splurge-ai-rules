@@ -1,9 +1,9 @@
-# splurge-cursor-rules 
-A comprehensive collection of Cursor AI rules for consistent, high-quality code development across multiple domains.
+# splurge-ai-rules 
+A comprehensive collection of AI rules for consistent, high-quality code development across multiple domains.
 
 ## Overview
 
-This repository contains a set of Cursor AI rules that enforce best practices for software development, with a focus on Python development. The rules are organized into 11 main categories covering various aspects of code quality, design, security, and development processes. All rules have been recently reviewed and updated for maximum clarity and actionable guidance.
+This repository contains a set of AI rules / instructions for Cursor and GitHub Copilot that enforce best practices for software development, with a focus on Python development. The rules are organized into 11 main categories covering various aspects of code quality, design, security, and development processes. All rules have been recently reviewed and updated for maximum clarity and actionable guidance.
 
 ## Rule Categories
 
