@@ -161,11 +161,30 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 
 ## Usage
 
-These rules are designed to be used with GitHub Copilot and Cursor AI to maintain consistent code quality and development practices. The rules are organized as GitHub Copilot instructions that can be referenced in your project's `.github/copilot-instructions.md` file.
+This repository provides comprehensive AI coding standards that can be used with both Cursor AI and GitHub Copilot to maintain consistent code quality and development practices.
+
+### For Cursor AI Users
+- Copy individual `.mdc` rule files from `.cursor/rules/` to your project's `.cursor/rules/` directory
+- Enable/disable specific rules based on your project needs
+- Each rule file contains focused standards for specific aspects of development
+
+### For GitHub Copilot Users
+- Copy the comprehensive standards from `.github/copilot-instructions.md` to your project's `.github/copilot-instructions.md` file
+- All standards are consolidated in a single file optimized for GitHub Copilot integration
 
 ## Installation
 
-Clone this repository and copy the relevant sections from `.github/copilot-instructions.md` to your project's copilot instructions file. The rules can be selectively applied based on your project needs.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/jim-schilling/splurge-ai-rules.git
+   cd splurge-ai-rules
+   ```
+
+2. Choose your integration method:
+   - **Cursor AI**: Copy relevant `.mdc` files from `.cursor/rules/` to your project's `.cursor/rules/` directory
+   - **GitHub Copilot**: Copy `.github/copilot-instructions.md` to your project's `.github/` directory
+
+3. Customize the rules to match your project's specific needs by enabling/disabling individual standards as appropriate.
 
 ## Project Structure
 
@@ -173,23 +192,20 @@ Clone this repository and copy the relevant sections from `.github/copilot-instr
 splurge-ai-rules/
 ├── .cursor/
 │   └── rules/                      # Cursor AI rule files (.mdc format)
-│       ├── design-standards.mdc   # SOLID, DRY, TDD, and design principles
-│       ├── style-standards.mdc    # Code formatting and style guidelines
-│       ├── sdlc-standards.mdc     # Development lifecycle and planning
-│       ├── naming-standards.mdc   # Naming conventions and standards
-│       ├── python-standards.mdc   # Python-specific coding standards
-│       ├── method-standards.mdc   # Method signatures and parameters
-│       ├── documentation-standards.mdc  # Comments and documentation
-│       ├── testing-standards.mdc  # Testing best practices and coverage
-│       ├── project-standards.mdc  # Project organization standards
 │       ├── cli-standards.mdc      # Command-line interface guidelines
-│       └── security-standards.mdc # Security and OWASP compliance
+│       ├── design-standards.mdc   # SOLID, DRY, TDD, and design principles
+│       ├── documentation-standards.mdc  # Comments and documentation
+│       ├── method-standards.mdc   # Method signatures and parameters
+│       ├── naming-standards.mdc   # Naming conventions and standards
+│       ├── project-standards.mdc  # Project organization standards
+│       ├── python-standards.mdc   # Python-specific coding standards
+│       ├── sdlc-standards.mdc     # Development lifecycle and planning
+│       ├── security-standards.mdc # Security and OWASP compliance
+│       ├── style-standards.mdc    # Code formatting and style guidelines
+│       └── testing-standards.mdc  # Testing best practices and coverage
 ├── .github/
 │   └── copilot-instructions.md     # GitHub Copilot coding standards
-├── docs/                           # Documentation and planning
-│   ├── research-[yyyy-MM-dd]-[sequence].md  # Research documentation
-│   ├── plan-[yyyy-MM-dd]-[sequence].md      # Action plans and specifications
-│   └── README-details.md           # Detailed project documentation
+├── CHANGELOG.md                    # Version history and release notes
 ├── LICENSE                         # MIT License
 └── README.md                       # This comprehensive overview
 ```
@@ -206,61 +222,9 @@ splurge-ai-rules/
 - Optimized for GitHub Copilot integration
 - Single file with all standards consolidated
 
-## Recent Changes
+## Contributing
 
-### v2025.09.08 Update
-- **README Enhancement**: Added comprehensive badges and updated project structure
-- **Project Structure Documentation**: Enhanced with detailed `.cursor/rules` directory structure
-- **Rule Files Overview**: Added clear distinction between Cursor AI and GitHub Copilot formats
-
-### v2025.09.05 Update - Clarity Improvements
-- **Comprehensive Clarity Review**: Conducted thorough review and improvements across all 11 rule files
-- **Header Standardization**: Fixed inconsistent header formats in SDLC and testing standards
-- **Content Consolidation**: Removed duplicate content in project standards
-- **Simplified Language**: Rewrote complex sentences for better readability
-  - Simplified PascalCase naming conventions explanation
-  - Clarified JSON streaming semantics with structured format options
-  - Broke up run-on sentences in CLI configuration guidance
-- **Added Code Examples**: Included practical Python examples for:
-  - Multi-parameter method signatures and calls
-  - Google-style docstrings with Args/Returns/Raises sections
-- **Enhanced Documentation**: Made documentation standards more specific with clear guidelines
-- **Improved Technical Writing**: Enhanced type annotation guidance and import organization
-- **Better Structure**: Organized content with consistent bullet points and clearer hierarchies
-
-### v2025.09.04 Update - Major Expansion
-- **New Rule Categories**: Added two new rule categories to expand coverage
-  - CLI Standards: Command-line interface best practices for text input/output and JSON support
-  - Security Standards: Comprehensive secure coding guidelines covering OWASP principles, input validation, authentication, encryption, and secure API design
-- **Rule Count Update**: Expanded from 9 to 11 rule categories total
-- **Standards Refinement**: Enhanced documentation and clarified guidelines across multiple rule files
-- **README Enhancement**: Updated overview and added comprehensive documentation for new rule categories
-- **Documentation Accuracy**: Corrected project standards to include missing folders (specs/, e2e/) and files (README-details.md, CHANGELOG.md)
-- **Standards Alignment**: Updated SDLC date format and added missing library development requirements
-- **Style Standards Enhancement**: Expanded magic constants guidance to include module/function level fallbacks
-
-### v2025.09.03 Update - Design Standards Enhancement
-- **Design Standards Enhancement**: Significantly expanded design principles and guidelines
-  - Added SOLID, DRY, BDD (TDD), MVP, KISS, PoLA, and YAGNI principles
-  - Added preferences for composition over inheritance, encapsulation, and separation of concerns
-  - Enhanced with fail fast approach and law of demeter
-  - Refined exception handling: domain-specific custom exceptions for public APIs
-  - Native/built-in exceptions preferred for low-level APIs
-- **SDLC Standards Refinement**: Improved documentation and formatting
-  - Moved design principles to Design Standards for better organization
-  - Updated date format from `[yyyyMMddTHHmm]` to `[yyyy-MM-ddTHHmm]` for better readability
-  - Changed "i.e." to "e.g." for improved grammar
-
-### v2025.09.02 Update - Standardization
-- **Rule File Renaming**: Standardized rule file naming convention for consistency
-  - `code-design.mdc` → `design-standards.mdc`
-  - `code-style.mdc` → `style-standards.mdc`
-  - `development-approach.mdc` → `sdlc-standards.mdc`
-  - `naming-conventions.mdc` → `naming-standards.mdc`
-- **Python Standards Enhancement**: Added import sorting guidelines
-  - Sort imports grouped by: standard libraries → third-party libraries → local libraries
-  - Within each group, sort alphabetically
-- **README Updates**: Updated section headers to match new naming convention
+This repository welcomes contributions and feedback on standards evolution. Please see the [CHANGELOG.md](CHANGELOG.md) for recent updates and planned enhancements.
 
 ### Roadmap
 - **Future Enhancements**: Planning additional rule categories for specialized domains

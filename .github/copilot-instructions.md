@@ -130,7 +130,10 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
 - Prefer validation of patterns of text, and avoid exact matching of content and formatting.
-- For Python, prefer pytest, pytest-cov, and pytest-xdist for testing with default parameters of -x -v -n auto.
+- Prefer pytest with pytest-xdist for testing with default parameters of -x -v -n auto.
+- Prefer pytest-cov for code coverage with parameters --cov=your_package --cov-report=term-missing.
+- Prefer pytest-mock for mocking, where appropriate.
+- Run pytest with code coverage when asked by user, otherwise skip.
 - Place unit tests in tests/unit/ and integration tests in tests/integration/, e2e tests in tests/e2e/, and performance tests in tests/performance/.
 - For Python, prefer pure pytest function style tests.
 - For Python, prefer use of tmp_path and tmp_path_factory fixtures for temporary files and directories.
