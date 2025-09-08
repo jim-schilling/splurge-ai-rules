@@ -3,7 +3,7 @@ description: command-line interface standards
 alwaysApply: false
 ---
 - MUST accept text input via stdin, arguments or files.
-- MUST accept environment variables for configuration.
+- MUST accept environment variables for configuration, unless user opts out.
 - Sensitive data must use environment variables.
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
 - Provide --output-format {table,json, and/or ndjson} (default: table).

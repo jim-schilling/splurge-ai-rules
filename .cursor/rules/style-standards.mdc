@@ -2,7 +2,7 @@
 description: code formatting and style standards
 alwaysApply: false
 ---
-- Prefer line length max of 120 characters, except when to do so would require use of temporary variables.
+- Prefer line length max of 120 characters, except for tests or when to do so would require use of temporary variables.
 - Except clauses shall be prefixed with a blank line.
 - Prefer separating logical blocks of code with a blank line for visual clarity.
 - For Python, for any line continuations, use parentheses only.

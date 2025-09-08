@@ -95,7 +95,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - When updating a method or class signature, do not maintain backwards compatibility unless specifically told to do so.
 
 ## Style Standards
-- Prefer line length max of 120 characters, except when to do so would require use of temporary variables.
+- Prefer line length max of 120 characters in code modules, except for tests or when to do so would require use of temporary variables.
 - Except clauses shall be prefixed with a blank line.
 - Prefer separating logical blocks of code with a blank line for visual clarity.
 - For Python, for any line continuations, use parentheses only.
@@ -131,10 +131,23 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Avoid validation of implementation details and private APIs.
 - Prefer validation of patterns of text, and avoid exact matching of content and formatting.
 - For Python, prefer pytest, pytest-cov, and pytest-xdist for testing with default parameters of -x -v -n auto.
+- Place unit tests in tests/unit/ and integration tests in tests/integration/, e2e tests in tests/e2e/, and performance tests in tests/performance/.
+- For Python, prefer pure pytest function style tests.
+- For Python, prefer use of tmp_path and tmp_path_factory fixtures for temporary files and directories.
+- Name test methods as test_[condition]_[expectedResult].
+- Each test method should ideally test a single condition and expected result.
+- Use fixtures for common setup and teardown logic.
+- Use parameterized tests for testing multiple input scenarios.
+- Use assertions to validate expected outcomes.
+- Prefer tests/unit/* to run to completion within 60 seconds.
+- Prefer tests/integration/* to run to completion within 60 seconds.
+- Prefer tests/e2e/* to run to run to completion within 60 seconds.
+- Prefer tests/performance/* to run to completion within 60 seconds.
+- Prefer entire test suite to run to completion within 120 seconds.
 
 ## CLI Standards
 - MUST accept text input via stdin, arguments or files.
-- MUST accept environment variables for configuration.
+- MUST accept environment variables for configuration, unless user opts out.
 - Sensitive data must use environment variables.
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
 - Provide --output-format {table,json, and/or ndjson} (default: table).
