@@ -12,6 +12,17 @@ and this project adheres to [Calendar Versioning (CalVer)](https://calver.org/).
 - **Project Structure Documentation**: Enhanced with detailed `.cursor/rules` directory structure
 - **Rule Files Overview**: Added clear distinction between Cursor AI and GitHub Copilot formats
 
+### Changed
+- **Python Standards Enhancement**: Added mypy and ruff integration
+  - Added mypy for type validation
+  - Added ruff for style, formatting, and security validation
+- **Testing Standards Refinement**: Improved test execution time guidelines
+  - Updated integration test timeout from 60 to 45 seconds for faster feedback
+  - Updated e2e test timeout from 60 to 45 seconds for improved CI performance
+  - Added specific performance test timeout of 45 seconds
+  - Maintained unit test timeout at 60 seconds for complex logic validation
+  - Kept full test suite timeout at 120 seconds for comprehensive validation
+
 ## [2025.09.05] - 2025-09-05
 
 ### Changed

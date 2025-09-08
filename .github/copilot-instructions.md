@@ -64,6 +64,8 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - When possible, place imports at top of module.
 - Group and sort imports: standard libraries, then third-party libraries, then local libraries. Sort alphabetically within each group.
 - Use separate statements for multiple context managers instead of nesting them.
+- Use mypy for type validation.
+- Use ruff for style, formatting, and security validation.
 
 ## Naming Standards
 - Use descriptive variable names with auxiliary verbs (e.g. is_active, has_permission).

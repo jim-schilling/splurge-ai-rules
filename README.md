@@ -90,6 +90,8 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 - Place imports at module top when possible
 - Group and sort imports: standard libraries, then third-party libraries, then local libraries (alphabetically within each group)
 - Use separate statements for multiple context managers instead of nesting them
+- Use mypy for type validation
+- Use ruff for style, formatting, and security validation
 
 ### 🧪 Testing Standards
 - Validate behavior of public APIs only
@@ -109,7 +111,7 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 - Use fixtures for common setup and teardown logic
 - Use parameterized tests for testing multiple input scenarios
 - Use assertions to validate expected outcomes
-- Performance guidelines: unit tests (<60s), integration tests (<60s), e2e tests (<60s), full suite (<120s)
+- Performance guidelines: unit tests (<60s), integration tests (<45s), e2e tests (<45s), performance tests (<45s), full suite (<120s)
 
 ### 📁 Project Standards
 - Create top-level folder: `docs/`
