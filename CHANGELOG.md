@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Calendar Versioning (CalVer)](https://calver.org/).
 
+## [2025.09.14] - 2025-09-14
+
+### Changed
+- **Documentation Structure Enhancement**: Improved clarity on file organization and naming conventions
+  - Standardized `README-details.md` to `README-DETAILS.md` for consistency across project standards
+  - Enhanced SDLC documentation with specific paths for research, plans, specifications, and issues
+  - Added explicit research guidelines requiring exploration of existing solutions, libraries, and tools
+- **Testing Standards Refinement**: Enhanced testing guidelines for better clarity and completeness
+  - Updated mock usage guidance from "Avoid use of mocks" to "Avoid or minimize use of mocks"
+  - Added requirement to place test data in `tests/data` directory
+- **Standards Synchronization**: Updated both Cursor AI rule files and GitHub Copilot instructions to maintain consistency
+
 ## [2025.09.08] - 2025-09-08
 
 ### Added

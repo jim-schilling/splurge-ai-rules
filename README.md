@@ -47,9 +47,11 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 
 ### 🔄 SDLC Standards
 - Follow Research, Plan, and Implement development lifecycle
-- Document research in `docs/research-[yyyy-MM-dd]-[sequence].md`
-- Document action plans in `docs/plan-[yyyy-MM-dd]-[sequence].md`
-- Document requirements and specifications in `specs/spec-[yyyy-MM-dd]-[sequence].md`
+- Document research in `docs/research/research-[yyyy-MM-dd]-[sequence].md`
+- Document action plans in `docs/plans/plan-[yyyy-MM-dd]-[sequence].md`
+- Document requirements and specifications in `docs/specs/spec-[yyyy-MM-dd]-[sequence].md`
+- Document issues/bugs in `docs/issues/issue-[yyyy-MM-dd]-[sequence].md`
+- Research shall include exploration of existing solutions, libraries, and tools
 - TDD implementation: write failing tests → implement code → run tests → refactor iteratively
 - Plans include requirements, acceptance criteria, testing strategy (TDD/BDD), and step-by-step guides
 - Every feature must start as a standalone library before integration:
@@ -96,7 +98,7 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 ### 🧪 Testing Standards
 - Validate behavior of public APIs only
 - Prefer validation using actual data, interfaces, and objects
-- Avoid use of mocks, except where appropriate
+- Avoid or minimize use of mocks, except where appropriate
 - Target 85% code coverage for all public interfaces and methods
 - Prefer shared helpers for common logic
 - Avoid validation of implementation details and private APIs
@@ -104,6 +106,7 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 - pytest ecosystem: pytest, pytest-cov, pytest-xdist
 - Default pytest parameters: `-x -v -n auto`
 - Test organization: unit/ in `tests/unit/`, integration/ in `tests/integration/`, e2e/ in `tests/e2e/`, performance/ in `tests/performance/`
+- Place test data in `tests/data`
 - Prefer pure pytest function style tests
 - Use `tmp_path` and `tmp_path_factory` fixtures for temporary files and directories
 - Name test methods as `test_[condition]_[expectedResult]`
@@ -115,7 +118,7 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 
 ### 📁 Project Standards
 - Create top-level folder: `docs/`
-- Create `docs/README-details.md` which details project features, usage, etc.
+- Create `docs/README-DETAILS.md` which details project features, usage, etc.
 - For code projects: create top-level folders: `tests/`, `examples/`, `specs/`
 - Under `tests/`: create `unit/`, `integration/`, `e2e/` sub-folders
 - For Python projects: use modern `pyproject.toml` configuration
