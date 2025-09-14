@@ -4,9 +4,11 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 
 ## Software Development Lifecycle Standards
 - Follow Research, Plan, and Implement lifecycle.
-- Document research in docs/research-[yyyy-MM-dd]-[sequence].md.
-- Document action plans in docs/plan-[yyyy-MM-dd]-[sequence].md.
-- Document requirements and specifications in specs/spec-[yyyy-MM-dd]-[sequence].md.
+- Document research in docs/research/research-[yyyy-MM-dd]-[sequence].md.
+- Document action plans in docs/plans/plan-[yyyy-MM-dd]-[sequence].md.
+- Document requirements and specifications in docs/specs/spec-[yyyy-MM-dd]-[sequence].md.
+- Document issues/bugs in docs/issues/issue-[yyyy-MM-dd]-[sequence].md.
+- Research shall include exploration of existing solutions, libraries, and tools.
 - Plans shall detail requirements, acceptance criteria, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
 - Each action plan shall be sub-divided into stages (e.g. Stage-1, Stage-2), while stages are subdivided into tasks (e.g. Task-[Stage].1, Task-[Stage].2).
 - Implementation lifecycle shall always: code failing tests, then implement code, then run tests, then iteratively refactor and run tests until all tests pass.
@@ -20,7 +22,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Create top-level folder: docs/.
 - Create project README.md which summarizes the project.
 - Create project CHANGELOG.md which details changes for each version/feature-branch.
-- Create docs/README-details.md which details project features, usage, errors, dependencies, etc.
+- Create docs/README-DETAILS.md which details project features, usage, errors, dependencies, etc.
 - For code projects, create top-level folders: tests/, examples/, specs/.
 - For code projects, create sub-folders under tests/: unit/, integration/, e2e/.
 - For Python projects, create modern, standardized pyproject.toml.
@@ -127,7 +129,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 ## Testing Standards
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
-- Avoid use of mocks, except where appropriate.
+- Avoid or minimize use of mocks, except where appropriate.
 - Target 85% code coverage for all public interfaces and methods.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
@@ -137,6 +139,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Prefer pytest-mock for mocking, where appropriate.
 - Run pytest with code coverage when asked by user, otherwise skip.
 - Place unit tests in tests/unit/ and integration tests in tests/integration/, e2e tests in tests/e2e/, and performance tests in tests/performance/.
+- Place test data in tests/data.
 - For Python, prefer pure pytest function style tests.
 - For Python, prefer use of tmp_path and tmp_path_factory fixtures for temporary files and directories.
 - Name test methods as test_[condition]_[expectedResult].

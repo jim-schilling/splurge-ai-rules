@@ -2,10 +2,11 @@
 description: software development lifecycle standards
 alwaysApply: true
 ---
-- Follow Research, Plan, and Implement lifecycle.
-- Document research in docs/research-[yyyy-MM-dd]-[sequence].md.
-- Document action plans in docs/plan-[yyyy-MM-dd]-[sequence].md.
-- Document requirements and specifications in specs/spec-[yyyy-MM-dd]-[sequence].md.
+- Follow Research, Plan, and Implement lifecycle.- Document research in docs/research/research-[yyyy-MM-dd]-[sequence].md.
+- Document action plans in docs/plans/plan-[yyyy-MM-dd]-[sequence].md.
+- Document requirements and specifications in docs/specs/spec-[yyyy-MM-dd]-[sequence].md.
+- Document issues/bugs in docs/issues/issue-[yyyy-MM-dd]-[sequence].md.
+- Research shall include exploration of existing solutions, libraries, and tools.
 - Plans shall detail requirements, acceptance criteria, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
 - Each action plan shall be sub-divided into stages (e.g. Stage-1, Stage-2), while stages are subdivided into tasks (e.g. Task-[Stage].1, Task-[Stage].2).
 - Implementation lifecycle shall always: code failing tests, then implement code, then run tests, then iteratively refactor and run tests until all tests pass.

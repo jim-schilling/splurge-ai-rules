@@ -4,7 +4,7 @@ alwaysApply: false
 ---
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
-- Avoid use of mocks, except where appropriate.
+- Avoid or minimize use of mocks, except where appropriate.
 - Target 85% code coverage for all public interfaces and methods.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
@@ -14,6 +14,7 @@ alwaysApply: false
 - Run pytest with code coverage when asked by user, otherwise skip.
 - Prefer pytest-mock for mocking, where appropriate.
 - Place unit tests in tests/unit/ and integration tests in tests/integration/, e2e tests in tests/e2e/, and performance tests in tests/performance/.
+- Place test data in tests/data.
 - For Python, prefer pure pytest function style tests.
 - For Python, prefer use of tmp_path and tmp_path_factory fixtures for temporary files and directories.
 - Name test methods as test_[condition]_[expectedResult].
