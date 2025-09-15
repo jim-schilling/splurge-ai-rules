@@ -99,6 +99,8 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - For SQL, prefer lower case column names.
 - Prefer upper snake case for constant names.
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
+- Test module names should mirror the domains associated with the modules, where DOMAINS is a list of the module's domain names.
+ - e.g., for a module that has DOMAINS = ['dsv', 'csv'], the test module should be named test_csv_dsv_[SEQUENCE].py, where [SEQUENCE] is a unique identifier for the test module.
 
 ## Method Standards
 - Prefer parameters in method signatures and method calls to be listed on separate lines.
