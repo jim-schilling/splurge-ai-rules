@@ -17,12 +17,18 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
   - Only integrate into larger applications after proving standalone functionality
 - Software tools, primary libraries, data tools, and development tools must expose their functionality through a CLI. Other software functionality may omit a CLI if appropriate.
 - If in doubt, prompt user for clarification and mark as [NEEDS CLARIFICATION].
+- Always ask for user confirmation before making significant changes.
+- Always ask for user confirmation before deleting files or data.
+- Always ask for user confirmation before overwriting existing files.
+- Use git for version control with feature branches and pull requests.
+- Write clear, concise commit messages in the imperative mood (e.g., "Add feature", "Fix bug").
 
 ## Project Organization Standards
 - Create top-level folder: docs/.
 - Create project README.md which summarizes the project.
 - Create project CHANGELOG.md which details changes for each version/feature-branch.
 - Create docs/README-DETAILS.md which details project features, usage, errors, dependencies, etc.
+- Create sub-folders under docs/: research/, plans/, specs/, issues/.
 - For code projects, create top-level folders: tests/, examples/, specs/.
 - For code projects, create sub-folders under tests/: unit/, integration/, e2e/.
 - For Python projects, create modern, standardized pyproject.toml.
@@ -68,6 +74,24 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Use separate statements for multiple context managers instead of nesting them.
 - Use mypy for type validation.
 - Use ruff for style, formatting, and security validation.
+- Place module-level constants in UPPER_SNAKE_CASE.
+- Place a single space before and after operators (=, +, -, *, /, ==, !=, <, >, <=, >=, etc.).
+- Place a single space after commas in lists, tuples, and function parameters.
+- Use 4 spaces for indentation, no tabs.
+- Use UTF-8 encoding without BOM for all text files.
+- Use f-strings for string interpolation.
+- Use triple double quotes for docstrings and comments.
+- Use single quotes for string literals, except when the string contains single quotes.
+- Add a DOMAINS list at the top of each module indicating associated domains (e.g., DOMAINS = ["generator", "helpers"]).
+- Add a package level constant __domains__ listing all associated domains for the package in __init__.py.
+- Use exceptions for error handling, not return codes.
+- Use __all__ to define public API of modules.
+- Use logging module for logging, not print statements.
+- Use pathlib for file and path operations.
+- Use context managers for file operations.
+- Use list comprehensions and generator expressions for creating lists and iterators.
+- Use enumerate() when needing both index and value in loops.
+- Use zip() to iterate over multiple iterables in parallel.
 
 ## Naming Standards
 - Use descriptive variable names with auxiliary verbs (e.g. is_active, has_permission).

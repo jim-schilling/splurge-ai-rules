@@ -1,4 +1,4 @@
-# splurge-ai-rules
+# splurge-cursor-rules
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -180,10 +180,10 @@ This repository provides comprehensive AI coding standards that can be used with
 ## Installation
 
 1. Clone this repository:
-   ```bash
-   git clone https://github.com/jim-schilling/splurge-ai-rules.git
-   cd splurge-ai-rules
-   ```
+  ```bash
+  git clone https://github.com/jim-schilling/splurge-ai-rules.git
+  cd splurge-ai-rules
+  ```
 
 2. Choose your integration method:
    - **Cursor AI**: Copy relevant `.mdc` files from `.cursor/rules/` to your project's `.cursor/rules/` directory

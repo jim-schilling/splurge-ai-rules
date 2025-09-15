@@ -13,3 +13,21 @@ alwaysApply: false
 - Use separate statements for multiple context managers instead of nesting them.
 - Use mypy for type validation.
 - Use ruff for style, formatting, and security validation.
+- Place module-level constants in UPPER_SNAKE_CASE.
+- Place a single space before and after operators (=, +, -, *, /, ==, !=, <, >, <=, >=, etc.).
+- Place a single space after commas in lists, tuples, and function parameters.
+- Use 4 spaces for indentation, no tabs.
+- Use UTF-8 encoding without BOM for all text files.
+- Use f-strings for string interpolation.
+- Use triple double quotes for docstrings and comments.
+- Use single quotes for string literals, except when the string contains single quotes.
+- Add a DOMAINS list at the top of each module indicating associated domains (e.g., DOMAINS = ["generator", "helpers"]).
+- Add a package level constant __domains__ listing all associated domains for the package in __init__.py.
+- Use exceptions for error handling, not return codes.
+- Use __all__ to define public API of modules.
+- Use logging module for logging, not print statements.
+- Use pathlib for file and path operations.
+- Use context managers for file operations.
+- Use list comprehensions and generator expressions for creating lists and iterators.
+- Use enumerate() when needing both index and value in loops.
+- Use zip() to iterate over multiple iterables in parallel.
