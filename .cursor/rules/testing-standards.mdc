@@ -4,7 +4,7 @@ alwaysApply: false
 ---
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
-- Avoid or minimize use of mocks, except where appropriate.
+- Minimize use of mocks, except where appropriate.
 - Target 85% code coverage for all public interfaces and methods.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
@@ -23,7 +23,7 @@ alwaysApply: false
 - Use parameterized tests for testing multiple input scenarios.
 - Use assertions to validate expected outcomes.
 - Prefer tests/unit/* to run to completion within 60 seconds.
-- Prefer tests/integration/* to run to completion within 45 seconds.
-- Prefer tests/e2e/* to run to run to completion within 45 seconds.
-- Prefer tests/performance/* to run to completion within 45 seconds.
+- Prefer tests/integration/* to run to completion within 60 seconds.
+- Prefer tests/e2e/* to run to run to completion within 60 seconds.
+- Prefer tests/performance/* to run to completion within 60 seconds.
 - Prefer entire test suite to run to completion within 120 seconds.

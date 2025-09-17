@@ -29,8 +29,8 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Create project CHANGELOG.md which details changes for each version/feature-branch.
 - Create docs/README-DETAILS.md which details project features, usage, errors, dependencies, etc.
 - Create sub-folders under docs/: research/, plans/, specs/, issues/.
-- For code projects, create top-level folders: tests/, examples/, specs/.
-- For code projects, create sub-folders under tests/: unit/, integration/, e2e/.
+- For code projects, create top-level folders: tests/, examples/, and tools/.
+- For code projects, create sub-folders under tests/: unit/, integration/, e2e/ and data/.
 - For Python projects, create modern, standardized pyproject.toml.
 - For Python projects, use CalVer versioning.
 - License shall be MIT.
@@ -130,6 +130,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Prefer separating logical blocks of code with a blank line for visual clarity.
 - For Python, for any line continuations, use parentheses only.
 - For Python, use ruff for code style, linting, and formatting.
+- For Python, use mypy for static type checking of codebase, tools, examples, and scripts, while excluding tests.
 - Avoid magic strings and magic numbers, instead prefer class level constants, otherwise use module/function level constants.
 
 ## Documentation Standards
@@ -155,7 +156,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 ## Testing Standards
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
-- Avoid or minimize use of mocks, except where appropriate.
+- Minimize use of mocks, except where appropriate.
 - Target 85% code coverage for all public interfaces and methods.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.

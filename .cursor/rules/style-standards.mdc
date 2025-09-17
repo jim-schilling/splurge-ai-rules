@@ -7,4 +7,5 @@ alwaysApply: false
 - Prefer separating logical blocks of code with a blank line for visual clarity.
 - For Python, for any line continuations, use parentheses only.
 - For Python, use ruff for code style, linting, and formatting.
+- For Python, use mypy for static type checking of codebase, tools, examples, and scripts, while excluding tests.
 - Avoid magic strings and magic numbers, instead prefer class level constants, otherwise use module/function level constants. 
