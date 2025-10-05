@@ -2,12 +2,13 @@
 description: command-line interface standards
 alwaysApply: false
 ---
+
 - MUST accept text input via stdin, arguments or files.
-- MUST accept environment variables for configuration, unless user opts out.
+- May accept environment variables for configuration, unless user opts out.
 - Sensitive data must use environment variables.
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
 - Provide --output-format {table,json, and/or ndjson} (default: table).
-- When reading from stdin, a file path of - MUST mean “read from stdin”.
+- When reading from stdin, a file path of - MUST mean "read from stdin".
 - Stdout and stderr MUST be UTF-8 encoded without BOM.
 - Exit codes: 0 success; 1 generic error; 2 invalid arguments; 130 interrupted (Ctrl+C).
 - Flags map by prefix + uppercasing + hyphens→underscores (e.g., --api-token → SPLURGE_DSV_API_TOKEN).
@@ -15,7 +16,7 @@ alwaysApply: false
   - `--output-format json`: Output complete JSON arrays, one per line
   - `--output-format ndjson`: Output one JSON object per line (newline-delimited)
   - Never mix JSON with other text on stdout
-- If an env var is referenced but missing, fail fast: “Missing required environment variable: <NAME>”. 
+- If an env var is referenced but missing, fail fast: "Missing required environment variable: <NAME>".
 - Redact sensitive data for output, logging, and errors.
 - Document defaults in --help output.
 - CLI arguments override environment variables.

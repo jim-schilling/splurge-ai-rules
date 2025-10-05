@@ -1,7 +1,8 @@
 ---
-description: naming conventions
+description: naming conventions and test naming
 alwaysApply: false
 ---
+
 - Use descriptive variable names with auxiliary verbs (e.g. is_active, has_permission).
 - Use PascalCase for class, enum, and dataclass names (e.g., DsvReader, CsvWriter, TransformXmlToJson).
 - For SQL, prefer lower case column names.
@@ -9,3 +10,14 @@ alwaysApply: false
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
 - Test module names should mirror the domains associated with the modules, where DOMAINS is a list of the module's domain names.
  - e.g., for a module that has DOMAINS = ['dsv', 'csv'], the test module should be named test_csv_dsv_[SEQUENCE].py, where [SEQUENCE] is a unique identifier for the test module.
+- Test class names should mirror the class being tested, prefixed with Test.
+ - e.g., for a class named CsvReader, the test class should be named TestCsvReader.
+- Test method names should be descriptive and follow the pattern test_[condition]_[expectedResult].
+ - e.g., test_read_valid_csv_returns_data, test_read_invalid_csv_raises_exception.
+- Use verbs for function and method names (e.g., get_data, process_file).
+- Use nouns for class and module names (e.g., DataProcessor, file_utils).
+- Use singular nouns for class names (e.g., User, Product).
+- Use plural nouns for collection names (e.g., Users, Products).
+- Test module names should be prefixed with test_ (e.g., test_csv_reader.py).
+- For every code module, there shall be at least one corresponding test module in named test_[module-path]_basic.py, where [module-path] is the module path with dots replaced by underscores, the path will not contain the package name.
+ - e.g., for a module named splurge_unittest_to_pytest.converter.helpers, the test module should be named test_converter_helpers_basic.py.

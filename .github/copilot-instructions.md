@@ -4,10 +4,13 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 
 ## Software Development Lifecycle Standards
 - Follow Research, Plan, and Implement lifecycle.
-- Document research in docs/research/research-[yyyy-MM-dd]-[sequence].md.
-- Document action plans in docs/plans/plan-[yyyy-MM-dd]-[sequence].md.
-- Document requirements and specifications in docs/specs/spec-[yyyy-MM-dd]-[sequence].md.
-- Document issues/bugs in docs/issues/issue-[yyyy-MM-dd]-[sequence].md.
+- Document research in docs/research/research-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document action plans in docs/plans/plan-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document requirements and specifications in docs/specs/spec-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document issues/bugs in docs/issues/issue-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document apis in docs/apis/api-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document notes in docs/notes/note-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document configuration in docs/configuration/configuration-[description]-[yyyy-MM-dd]-[sequence].md.
 - Research shall include exploration of existing solutions, libraries, and tools.
 - Plans shall detail requirements, acceptance criteria, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
 - Each action plan shall be sub-divided into stages (e.g. Stage-1, Stage-2), while stages are subdivided into tasks (e.g. Task-[Stage].1, Task-[Stage].2).
@@ -28,9 +31,9 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Create project README.md which summarizes the project.
 - Create project CHANGELOG.md which details changes for each version/feature-branch.
 - Create docs/README-DETAILS.md which details project features, usage, errors, dependencies, etc.
-- Create sub-folders under docs/: research/, plans/, specs/, issues/.
-- For code projects, create top-level folders: tests/, examples/, and tools/.
-- For code projects, create sub-folders under tests/: unit/, integration/, e2e/ and data/.
+- Create sub-folders under docs/: research/, plans/, specs/, issues/, apis/, notes/, configuration/.
+- For code projects, create top-level folders: tests/, examples/, scripts/, and tools/.
+- For code projects, create sub-folders under tests/: unit/, integration/, e2e/.
 - For Python projects, create modern, standardized pyproject.toml.
 - For Python projects, use CalVer versioning.
 - License shall be MIT.
@@ -66,9 +69,9 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Always add type annotations to function and method signatures.
 - Add type annotations to variables when it improves code clarity.
 - Prefer | instead of Optional or Union.
-- Code concise, technical, Python that adheres to PEP 8 and PEP 585.
+- Code concise, technical, Python that adheres to PEP 8, PEP 604, and PEP 585.
 - Code to modern Python standards targeting version 3.10 or later.
-- Use absolute import paths.
+- Use absolute import paths, where appropriate.
 - When possible, place imports at top of module.
 - Group and sort imports: standard libraries, then third-party libraries, then local libraries. Sort alphabetically within each group.
 - Use separate statements for multiple context managers instead of nesting them.
@@ -101,11 +104,24 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
 - Test module names should mirror the domains associated with the modules, where DOMAINS is a list of the module's domain names.
  - e.g., for a module that has DOMAINS = ['dsv', 'csv'], the test module should be named test_csv_dsv_[SEQUENCE].py, where [SEQUENCE] is a unique identifier for the test module.
+- Test class names should mirror the class being tested, prefixed with Test.
+ - e.g., for a class named CsvReader, the test class should be named TestCsvReader.
+- Test method names should be descriptive and follow the pattern test_[condition]_[expectedResult].
+ - e.g., test_read_valid_csv_returns_data, test_read_invalid_csv_raises_exception.
+- Use verbs for function and method names (e.g., get_data, process_file).
+- Use nouns for class and module names (e.g., DataProcessor, file_utils).
+- Use singular nouns for class names (e.g., User, Product).
+- Use plural nouns for collection names (e.g., Users, Products).
+- Test module names should be prefixed with test_ (e.g., test_csv_reader.py).
+- For every code module, there shall be at least one corresponding test module in named test_[module-path]_basic.py, where [module-path] is the module path with dots replaced by underscores, the path will not contain the package name.
+ - e.g., for a module named splurge_unittest_to_pytest.converter.helpers, the test module should be named test_converter_helpers_basic.py.
 
 ## Method Standards
 - Prefer parameters in method signatures and method calls to be listed on separate lines.
-- Prefer named keywords for default parameters.
-- Method signatures shall prefer use of keywords for more than 1 parameter.
+- For classmethods, property methods, and class instance method calls with 3 or more parameters, prefer named keywords for default parameters.
+- For standard methods and staticmethods calls with 2 or more parameters, prefer named keywords for default parameters.
+- For all other method signatures prefer use of keywords for more than 1 parameter.
+- If a method signature use keywords, then all default parameters should be keywords.
 - For method signatures with more than 2 parameters, place each parameter on a separate line:
   ```python
   def process_data(
@@ -119,7 +135,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
   result = process_data(
       input_file="data.json",
       output_format="ndjson",
-      validate_schema=True
+      validate_schema=Trues
   )
   ```
 - When updating a method or class signature, do not maintain backwards compatibility unless specifically told to do so.
@@ -130,7 +146,6 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Prefer separating logical blocks of code with a blank line for visual clarity.
 - For Python, for any line continuations, use parentheses only.
 - For Python, use ruff for code style, linting, and formatting.
-- For Python, use mypy for static type checking of codebase, tools, examples, and scripts, while excluding tests.
 - Avoid magic strings and magic numbers, instead prefer class level constants, otherwise use module/function level constants.
 
 ## Documentation Standards
@@ -154,16 +169,22 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
   ```
 
 ## Testing Standards
+- Follow BDD/TDD (Behavior/Test Driven Development) practices.
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
 - Minimize use of mocks, except where appropriate.
-- Target 85% code coverage for all public interfaces and methods.
+- Mock at architectural boundaries (external systems, I/O) but prefer real objects/data for internal logic.
+- Ensure tests are isolated and do not depend on external systems or state.
+- Each code module must have at least one corresponding test module.
+- Unit test must target 85% code coverage for all public interfaces and methods.
+- Combination of unit tests and integration tests must target 95% code coverage for all public interfaces and methods.
+- Prefer tests that are independent, repeatable, and deterministic.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
 - Prefer validation of patterns of text, and avoid exact matching of content and formatting.
-- Prefer pytest with pytest-xdist for testing with default parameters of -x -v -n auto.
+- Prefer pytest; pytest-xdist may be used optionally for parallel runs (e.g., -n 4) when desired.
 - Prefer pytest-cov for code coverage with parameters --cov=your_package --cov-report=term-missing.
-- Prefer pytest-mock for mocking, where appropriate.
+- Prefer pytest-mock for mocking and patching, where appropriate.
 - Run pytest with code coverage when asked by user, otherwise skip.
 - Place unit tests in tests/unit/ and integration tests in tests/integration/, e2e tests in tests/e2e/, and performance tests in tests/performance/.
 - Place test data in tests/data.
@@ -182,7 +203,7 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 
 ## CLI Standards
 - MUST accept text input via stdin, arguments or files.
-- MUST accept environment variables for configuration, unless user opts out.
+- May accept environment variables for configuration, unless user opts out.
 - Sensitive data must use environment variables.
 - Environment variable names MUST use a project prefix [A-Z][A-Z0-9_]*_ (e.g., SPLURGE_DSV_).
 - Provide --output-format {table,json, and/or ndjson} (default: table).

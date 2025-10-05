@@ -1,11 +1,16 @@
 ---
-description: software development lifecycle standards
-alwaysApply: true
+description: software development lifecycle standards and docs
+alwaysApply: false
 ---
-- Follow Research, Plan, and Implement lifecycle.- Document research in docs/research/research-[yyyy-MM-dd]-[sequence].md.
-- Document action plans in docs/plans/plan-[yyyy-MM-dd]-[sequence].md.
-- Document requirements and specifications in docs/specs/spec-[yyyy-MM-dd]-[sequence].md.
-- Document issues/bugs in docs/issues/issue-[yyyy-MM-dd]-[sequence].md.
+
+- Follow Research, Plan, and Implement lifecycle.
+- Document research in docs/research/research-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document action plans in docs/plans/plan-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document requirements and specifications in docs/specs/spec-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document issues/bugs in docs/issues/issue-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document apis in docs/apis/api-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document notes in docs/notes/note-[description]-[yyyy-MM-dd]-[sequence].md.
+- Document configuration in docs/configuration/configuration-[description]-[yyyy-MM-dd]-[sequence].md.
 - Research shall include exploration of existing solutions, libraries, and tools.
 - Plans shall detail requirements, acceptance criteria, testing strategy (e.g. TDD and BDD), and a step-by-step implementation guide.
 - Each action plan shall be sub-divided into stages (e.g. Stage-1, Stage-2), while stages are subdivided into tasks (e.g. Task-[Stage].1, Task-[Stage].2).
@@ -15,3 +20,8 @@ alwaysApply: true
   - Only integrate into larger applications after proving standalone functionality
 - Software tools, primary libraries, data tools, and development tools must expose their functionality through a CLI. Other software functionality may omit a CLI if appropriate.
 - If in doubt, prompt user for clarification and mark as [NEEDS CLARIFICATION].
+- Always ask for user confirmation before making significant changes.
+- Always ask for user confirmation before deleting files or data.
+- Always ask for user confirmation before overwriting existing files.
+- Use git for version control with feature branches and pull requests.
+- Write clear, concise commit messages in the imperative mood (e.g., "Add feature", "Fix bug").

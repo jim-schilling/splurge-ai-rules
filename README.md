@@ -10,6 +10,13 @@ A comprehensive collection of AI rules for consistent, high-quality code develop
 
 This repository contains a set of AI rules / instructions for Cursor and GitHub Copilot that enforce best practices for software development, with a focus on Python development. The rules are organized into 11 main categories covering various aspects of code quality, design, security, and development processes. All rules have been recently reviewed and updated for maximum clarity and actionable guidance.
 
+## Latest updates (2025-10-05)
+
+- Normalized all `.cursor/rules/*.mdc` files so each file contains a single YAML frontmatter and the corresponding section from `.github/copilot-instructions.md` (one section per rule file).
+- Files updated: `cli-standards.mdc`, `design-standards.mdc`, `documentation-standards.mdc`, `method-standards.mdc`, `naming-standards.mdc`, `project-standards.mdc`, `python-standards.mdc`, `sdlc-standards.mdc`, `security-standards.mdc`, `style-standards.mdc`, `testing-standards.mdc`.
+- Next steps: review the files under `.cursor/rules/`, run the optional verification diffs, and if approved, create a feature branch and open a pull request to apply these changes to the repository.
+- Note: Some files were manually edited after automated updates; please review `project-standards.mdc`, `design-standards.mdc`, `cli-standards.mdc`, `security-standards.mdc`, `style-standards.mdc`, and `testing-standards.mdc` for any additional customizations.
+
 ## Rule Categories
 
 ### 🏗️ Design Standards
@@ -94,6 +101,7 @@ This repository contains a set of AI rules / instructions for Cursor and GitHub 
 - Use separate statements for multiple context managers instead of nesting them
 - Use mypy for type validation
 - Use ruff for style, formatting, and security validation
+- Use package ```___all__``` to list public API.
 
 ### 🧪 Testing Standards
 - Validate behavior of public APIs only

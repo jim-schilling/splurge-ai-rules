@@ -1,10 +1,13 @@
 ---
-description: method signatures and parameter standards
+description: method and signature style guidelines
 alwaysApply: false
 ---
+
 - Prefer parameters in method signatures and method calls to be listed on separate lines.
-- Prefer named keywords for default parameters.
-- Method signatures shall prefer use of keywords for more than 1 parameter.
+- For classmethods, property methods, and class instance method calls with 3 or more parameters, prefer named keywords for default parameters.
+- For standard methods and staticmethods calls with 2 or more parameters, prefer named keywords for default parameters.
+- For all other method signatures prefer use of keywords for more than 1 parameter.
+- If a method signature use keywords, then all default parameters should be keywords.
 - For method signatures with more than 2 parameters, place each parameter on a separate line:
   ```python
   def process_data(
@@ -18,7 +21,7 @@ alwaysApply: false
   result = process_data(
       input_file="data.json",
       output_format="ndjson",
-      validate_schema=True
+      validate_schema=Trues
   )
   ```
 - When updating a method or class signature, do not maintain backwards compatibility unless specifically told to do so.

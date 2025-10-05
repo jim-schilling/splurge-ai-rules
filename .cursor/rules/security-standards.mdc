@@ -2,6 +2,7 @@
 description: secure coding standards and best practices
 alwaysApply: false
 ---
+
 - Follow secure coding best practices.
 - Validate and sanitize all user inputs to prevent injection attacks (SQL, Shell, XSS, command injection).
 - Use parameterized queries and prepared statements for database operations.

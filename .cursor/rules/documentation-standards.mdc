@@ -1,7 +1,8 @@
 ---
-description: comments and documentation standards
+description: documentation and docstring standards
 alwaysApply: false
 ---
+
 - Add comments before complex logic blocks to explain the "why" and "what".
 - Use inline comments sparingly, only for complex or non-obvious code sections.
 - Remove outdated comments during refactoring instead of accumulating them.

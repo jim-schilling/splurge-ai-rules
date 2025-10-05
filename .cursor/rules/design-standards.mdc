@@ -1,7 +1,8 @@
 ---
-description: code structure and design standards
+description: design principles and guidelines
 alwaysApply: false
 ---
+
 - Follow SOLID (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) principles.
 - Follow DRY (Don't Repeat Yourself) principle.
 - Follow BDD/TDD (Behavior/Test Driven Development) practices.

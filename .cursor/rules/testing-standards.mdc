@@ -1,18 +1,24 @@
 ---
-description: testing standards
+description: testing guidelines and expectations
 alwaysApply: false
 ---
+- Follow BDD/TDD (Behavior/Test Driven Development) practices.
 - Validate behavior of public APIs only.
 - Prefer validation using actual data, interfaces, and objects
 - Minimize use of mocks, except where appropriate.
-- Target 85% code coverage for all public interfaces and methods.
+- Mock at architectural boundaries (external systems, I/O) but prefer real objects/data for internal logic.
+- Ensure tests are isolated and do not depend on external systems or state.
+- Each code module must have at least one corresponding test module.
+- Unit test must target 85% code coverage for all public interfaces and methods.
+- Combination of unit tests and integration tests must target 95% code coverage for all public interfaces and methods.
+- Prefer tests that are independent, repeatable, and deterministic.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
 - Prefer validation of patterns of text, and avoid exact matching of content and formatting.
-- Prefer pytest with pytest-xdist for testing with default parameters of -x -v -n auto.
+- Prefer pytest; pytest-xdist may be used optionally for parallel runs (e.g., -n 4) when desired.
 - Prefer pytest-cov for code coverage with parameters --cov=your_package --cov-report=term-missing.
+- Prefer pytest-mock for mocking and patching, where appropriate.
 - Run pytest with code coverage when asked by user, otherwise skip.
-- Prefer pytest-mock for mocking, where appropriate.
 - Place unit tests in tests/unit/ and integration tests in tests/integration/, e2e tests in tests/e2e/, and performance tests in tests/performance/.
 - Place test data in tests/data.
 - For Python, prefer pure pytest function style tests.
