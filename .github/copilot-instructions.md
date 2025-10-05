@@ -176,8 +176,8 @@ This document contains coding standards and guidelines for the splurge-ai-rules 
 - Mock at architectural boundaries (external systems, I/O) but prefer real objects/data for internal logic.
 - Ensure tests are isolated and do not depend on external systems or state.
 - Each code module must have at least one corresponding test module.
-- Unit test must target 85% code coverage for all public interfaces and methods.
-- Combination of unit tests and integration tests must target 95% code coverage for all public interfaces and methods.
+- Unit test shall target 85% code coverage for all public interfaces and methods.
+- Combination of unit tests and integration tests shall target 95% code coverage for all public interfaces and methods.
 - Prefer tests that are independent, repeatable, and deterministic.
 - Prefer shared helpers for common logic.
 - Avoid validation of implementation details and private APIs.
